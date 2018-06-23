@@ -10,5 +10,6 @@ package Entity;
  * @author Usuario
  */
 public class Product {
+    String Id;
     
 }
