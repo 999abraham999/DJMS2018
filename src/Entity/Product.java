@@ -10,6 +10,27 @@ package Entity;
  * @author Usuario
  */
 public class Product {
-    String Id;
+    Long Id;
+    String nameProduct;
+
+    public Product() {
+    }
+
+    public Long getId() {
+        return Id;
+    }
+
+    public void setId(Long Id) {
+        this.Id = Id;
+    }
+
+    public String getNameProduct() {
+        return nameProduct;
+    }
+
+    public void setNameProduct(String nameProduct) {
+        this.nameProduct = nameProduct;
+    }
+    
     
 }
