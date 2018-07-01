@@ -3,9 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/D:/proyectos/Git%20Hub/DeJaMiSu_2018/src/Entity/Product.java</file>
             <file>file:/D:/proyectos/Git%20Hub/DeJaMiSu_2018/src/main/mainJfram.java</file>
             <file>file:/D:/proyectos/Git%20Hub/DeJaMiSu_2018/src/main/logginJfram.java</file>
+=======
+            <file>file:/F:/gitHub/DJMS2018/src/Employee/employeeJfrm.java</file>
+            <file>file:/F:/gitHub/DJMS2018/src/Entity/Employee.java</file>
+            <file>file:/F:/gitHub/DJMS2018/src/ConnectionDB/ConnectionSQLite.java</file>
+            <file>file:/F:/gitHub/DJMS2018/src/Entity/Person.java</file>
+            <file>file:/F:/gitHub/DJMS2018/src/dejamisu_2018/DeJaMiSu_2018.java</file>
+            <file>file:/F:/gitHub/DJMS2018/src/Entity/Product.java</file>
+>>>>>>> 0acf6ab04fbd2a4a477dd3c3341455cc138b5351
         </group>
     </open-files>
 </project-private>
