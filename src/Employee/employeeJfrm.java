@@ -273,7 +273,7 @@ public class employeeJfrm extends javax.swing.JFrame {
         String compareValid = "";
         Boolean valid = true;
         String errorMessage = "Campo vacio";
-        if (compareValid == jtxtName.getText()) {
+        if (null == jtxtName.getText()) {
             JOptionPane.showMessageDialog(jtxtName, errorMessage);
             valid = false;
         } else if (compareValid == jtxtLastName.getText()) {

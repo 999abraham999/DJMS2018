@@ -5,8 +5,10 @@
         <group>
             <file>file:/F:/gitHub/DJMS2018/src/Employee/employeeJfrm.java</file>
             <file>file:/F:/gitHub/DJMS2018/src/Entity/Employee.java</file>
+            <file>file:/F:/gitHub/DJMS2018/src/ConnectionDB/ConnectionSQLite.java</file>
             <file>file:/F:/gitHub/DJMS2018/src/Entity/Person.java</file>
             <file>file:/F:/gitHub/DJMS2018/src/dejamisu_2018/DeJaMiSu_2018.java</file>
+            <file>file:/F:/gitHub/DJMS2018/src/Entity/Product.java</file>
         </group>
     </open-files>
 </project-private>
