@@ -17,10 +17,11 @@ public class ConnectionSQLite {
     }
     
     public static Connection ConnectDB(){
-        String url = "jdbc:sqlite:F://gitHub/db_DJMS/DJMI_DB.sqlite";
+        String urlAbraham = "jdbc:sqlite:F://gitHub/db_DJMS/DJMI_DB.sqlite";
+        String urlDany = "??";
          Connection conn = null;
         try {
-            conn = DriverManager.getConnection(url);
+            conn = DriverManager.getConnection(urlAbraham);
             System.out.println("Connected to Database");
           } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error en la conexion" + e);
