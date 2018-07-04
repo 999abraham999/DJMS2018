@@ -12,16 +12,19 @@ import javax.swing.JOptionPane;
  * @author ABRAHAM
  */
 public class ConnectionSQLite {
-    Connection conn = null;
+
+    public ConnectionSQLite() {
+    }
     
     public static Connection ConnectDB(){
+        String url = "jdbc:sqlite:F://gitHub/db_DJMS/DJMI_DB.sqlite";
+         Connection conn = null;
         try {
-            Class.forName("org.sqlite.JDBC");
-            Connection conn = DriverManager.getConnection("jdbc:sqlite:DJMI_DB.sqlite");
-            JOptionPane.showMessageDialog(null, "Connected");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error en la conexion");
+            conn = DriverManager.getConnection(url);
+            System.out.println("Connected to Database");
+          } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error en la conexion" + e);
         }
-    return null;
+    return conn;
     }
 }

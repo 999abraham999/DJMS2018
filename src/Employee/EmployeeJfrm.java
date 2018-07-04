@@ -5,6 +5,7 @@
  */
 package Employee;
 
+import static ConnectionDB.ConnectionSQLite.ConnectDB;
 import Entity.Employee;
 import java.time.Instant;
 import java.util.Date;
@@ -14,12 +15,12 @@ import javax.swing.JOptionPane;
  *
  * @author ABRAHAM
  */
-public class employeeJfrm extends javax.swing.JFrame {
+public class EmployeeJfrm extends javax.swing.JFrame {
 
     /**
      * Creates new form mainJfrm
      */
-    public employeeJfrm() {
+    public EmployeeJfrm() {
         initComponents();
     }
 
@@ -48,6 +49,7 @@ public class employeeJfrm extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jbtnSave = new javax.swing.JButton();
         jbtnCancel = new javax.swing.JButton();
+        jbtnConnection = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -107,6 +109,13 @@ public class employeeJfrm extends javax.swing.JFrame {
 
         jbtnCancel.setText("Cancelar");
 
+        jbtnConnection.setText("probar conection");
+        jbtnConnection.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnConnectionActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -116,6 +125,8 @@ public class employeeJfrm extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jbtnConnection, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
                         .addComponent(jbtnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33)
                         .addComponent(jbtnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -166,7 +177,8 @@ public class employeeJfrm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbtnSave)
-                    .addComponent(jbtnCancel))
+                    .addComponent(jbtnCancel)
+                    .addComponent(jbtnConnection))
                 .addGap(19, 19, 19))
         );
 
@@ -214,6 +226,10 @@ public class employeeJfrm extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jbtnSaveActionPerformed
 
+    private void jbtnConnectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnConnectionActionPerformed
+        ConnectDB();
+    }//GEN-LAST:event_jbtnConnectionActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -231,21 +247,23 @@ public class employeeJfrm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(employeeJfrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EmployeeJfrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(employeeJfrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EmployeeJfrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(employeeJfrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EmployeeJfrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(employeeJfrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EmployeeJfrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new employeeJfrm().setVisible(true);
+                new EmployeeJfrm().setVisible(true);
             }
         });
     }
@@ -261,6 +279,7 @@ public class employeeJfrm extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JButton jbtnCancel;
+    private javax.swing.JButton jbtnConnection;
     private javax.swing.JButton jbtnSave;
     private javax.swing.JTextField jtxtAddress;
     private javax.swing.JTextField jtxtAge;
