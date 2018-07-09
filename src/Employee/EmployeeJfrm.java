@@ -218,11 +218,11 @@ public class EmployeeJfrm extends javax.swing.JFrame {
             employee = new Employee();
             fecha = new Date();
 
-            employee.getPeron().setName(jtxtName.getName());
-            employee.getPeron().setLastName(jtxtLastName.getText());
-            employee.getPeron().setAge(fecha);
-            employee.getPeron().setAddress(jtxtAddress.getText());
-            employee.getPeron().setRegisterDate(fecha);
+            employee.getPerson().setName(jtxtName.getName());
+            employee.getPerson().setLastName(jtxtLastName.getText());
+            employee.getPerson().setAge(fecha);
+            employee.getPerson().setAddress(jtxtAddress.getText());
+            employee.getPerson().setRegisterDate(fecha);
         }
     }//GEN-LAST:event_jbtnSaveActionPerformed
 

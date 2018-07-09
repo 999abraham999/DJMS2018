@@ -18,10 +18,10 @@ public class ConnectionSQLite {
     
     public static Connection ConnectDB(){
         String urlAbraham = "jdbc:sqlite:F://gitHub/db_DJMS/DJMI_DB.sqlite";
-        String urlDany = "??";
+        String urlDany = "jdbc:sqlite:C://database sqlite/DJMI_DB.sqlite";
          Connection conn = null;
         try {
-            conn = DriverManager.getConnection(urlAbraham);
+            conn = DriverManager.getConnection(urlDany);
             System.out.println("Connected to Database");
           } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error en la conexion" + e);

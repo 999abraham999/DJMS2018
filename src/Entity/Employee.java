@@ -5,20 +5,21 @@
  */
 package Entity;
 
+
 /**
  *
  * @author ABRAHAM
  */
 public class Employee {
     Long id;
-    Person peron;
+    Person person;
 
     public Employee() {
     }
 
-    public Employee(Long id, Person peron) {
+    public Employee(Long id, Person person) {
         this.id = id;
-        this.peron = peron;
+        this.person = person;
     }
 
     public Long getId() {
@@ -29,12 +30,17 @@ public class Employee {
         this.id = id;
     }
 
-    public Person getPeron() {
-        return peron;
+    public Person getPerson() {
+        return person;
     }
 
-    public void setPeron(Person peron) {
-        this.peron = peron;
-    } 
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" + "id=" + id + ", person=" + person + '}';
+    }
     
 }
