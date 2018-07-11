@@ -26,10 +26,14 @@ public class LoginController {
     public void SearchUser(User user){
         String us = user.getUserName();
         String pass = user.getPassword();
-        
-        
-        
-        
+        if(user!=null){
+        loginRepository.Search(user);
+        JOptionPane.showMessageDialog(null,"Su usuario es correcto!!");
+        }
+        else{
+        JOptionPane.showMessageDialog(null, "Error de Usuario o Contrasena");
+        }
+            
         
         
         /*if(validation(user)){

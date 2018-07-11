@@ -9,6 +9,7 @@ import ConnectionDB.ConnectionSQLite;
 import Entity.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
@@ -23,10 +24,13 @@ public class LoginRepository {
     
     public void Search(User user){
     String sqlQuery = "select * from User where User.user like "+"'"+user.getUserName()+"';";
+    ResultSet resultado =null;
+    String us="";
     try (Connection conn = ConnectionSQLite.ConnectDB();
                 PreparedStatement pstmt = conn.prepareStatement(sqlQuery)){
-                
-            
+                resultado = pstmt.executeQuery();
+                us = resultado.getNString("user");
+            JOptionPane.showMessageDialog(null, us+" usuario correcto");
             
             pstmt.executeUpdate();
         } catch (SQLException e) {
