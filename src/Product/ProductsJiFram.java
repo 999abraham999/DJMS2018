@@ -6,18 +6,17 @@
 package Product;
 
 import Entity.Product;
-import Product.ProductController;
-import javax.swing.*;
+
 /**
  *
- * @author Usuario
+ * @author ABRAHAM
  */
-public class ProductJfrm extends javax.swing.JFrame {
-    ProductController productController = new ProductController();
+public class ProductsJiFram extends javax.swing.JInternalFrame {
+  ProductController productController = new ProductController();
     /**
-     * Creates new form productJfrm
+     * Creates new form ProductsJiFram
      */
-    public ProductJfrm() {
+    public ProductsJiFram() {
         initComponents();
     }
 
@@ -30,19 +29,26 @@ public class ProductJfrm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jtxtCode = new javax.swing.JTextField();
+        jtxtPriceUnit = new javax.swing.JTextField();
+        jbtnSave = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jtxtName = new javax.swing.JTextField();
-        jtxtCode = new javax.swing.JTextField();
-        jtxtPriceUnit = new javax.swing.JTextField();
-        jbtnSave = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowOpened(java.awt.event.WindowEvent evt) {
-                formWindowOpened(evt);
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
+        setTitle("Productos");
+        setVisible(true);
+
+        jbtnSave.setText("Guardar");
+        jbtnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnSaveActionPerformed(evt);
             }
         });
 
@@ -54,13 +60,6 @@ public class ProductJfrm extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("Registro de Productos");
-
-        jbtnSave.setText("Guardar");
-        jbtnSave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnSaveActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -82,7 +81,7 @@ public class ProductJfrm extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(116, 116, 116)
                         .addComponent(jLabel4)))
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jbtnSave)
@@ -103,61 +102,20 @@ public class ProductJfrm extends javax.swing.JFrame {
                     .addComponent(jtxtCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel3))
+                    .addComponent(jLabel3)
                     .addComponent(jtxtPriceUnit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addComponent(jbtnSave)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formWindowOpened
-
     private void jbtnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSaveActionPerformed
         saveOrUpdateProduct();
     }//GEN-LAST:event_jbtnSaveActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ProductJfrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ProductJfrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ProductJfrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ProductJfrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ProductJfrm().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
@@ -171,23 +129,12 @@ public class ProductJfrm extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void saveOrUpdateProduct() {
-        try {
-             JOptionPane.showMessageDialog(null, "ntro" );
-            Product product = new Product();
+      Product product = new Product();
      
         product.setNameProduct(jtxtName.getText());
         product.setCodeProduct(Long.parseLong(jtxtCode.getText()));
         product.setPriceUnitProcut(Double.parseDouble(jtxtPriceUnit.getText()));
-        productController.SaveProduct(product);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error en la conexion" + e);
-        }
-        cleanTxt();
-    }
-
-    private void cleanTxt() {
-        jtxtName.setText(null);
-        jtxtCode.setText(null);
-        jtxtPriceUnit.setText(null);
+        
+        productController.SaveProduct(product);  
     }
 }
