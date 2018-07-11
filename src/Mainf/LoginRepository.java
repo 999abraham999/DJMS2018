@@ -29,7 +29,7 @@ public class LoginRepository {
     try (Connection conn = ConnectionSQLite.ConnectDB();
                 PreparedStatement pstmt = conn.prepareStatement(sqlQuery)){
                 resultado = pstmt.executeQuery();
-                us = resultado.getNString("user");
+                us = resultado.getNString(user.getUserName());
             JOptionPane.showMessageDialog(null, us+" usuario correcto");
             
             pstmt.executeUpdate();
