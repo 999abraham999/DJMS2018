@@ -24,7 +24,7 @@ public class ConnectionSQLite {
             conn = DriverManager.getConnection(urlDany);
             System.out.println("Connected to Database");
           } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error en la conexion" + e);
+            JOptionPane.showMessageDialog(null, "Error en la puta qe te pario: " + e);
         }
     return conn;
     }

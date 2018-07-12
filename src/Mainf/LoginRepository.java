@@ -29,12 +29,14 @@ public class LoginRepository {
     try (Connection conn = ConnectionSQLite.ConnectDB();
                 PreparedStatement pstmt = conn.prepareStatement(sqlQuery)){
                 resultado = pstmt.executeQuery();
-                us = resultado.getNString(user.getUserName());
+                
+            us = user.getUserName().toString();
+        
             JOptionPane.showMessageDialog(null, us+" usuario correcto");
             
             pstmt.executeUpdate();
         } catch (SQLException e) {
-             JOptionPane.showMessageDialog(null, "Error en la conexion" + e);
+             JOptionPane.showMessageDialog(null, "Error alv" + e);
         }
     }
 }

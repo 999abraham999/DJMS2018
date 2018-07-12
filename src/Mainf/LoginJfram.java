@@ -13,7 +13,7 @@ import Entity.User;
  * @author Usuario
  */
 public class LoginJfram extends javax.swing.JFrame {
-LoginController loginController = new LoginController();
+//LoginController loginController = new LoginController();
     /** Creates new form mainJfram */
     public LoginJfram() {
         initComponents();
@@ -102,7 +102,7 @@ LoginController loginController = new LoginController();
              us.getUserName();
              us.getPassword();
              
-        loginController.SearchUser(us);
+//        loginController.SearchUser(us);
     }//GEN-LAST:event_jBtnEntrarActionPerformed
 
     /**

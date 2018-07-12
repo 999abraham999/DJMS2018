@@ -27,7 +27,7 @@ public class LoginController {
         String us = user.getUserName();
         String pass = user.getPassword();
         if(user!=null){
-        loginRepository.Search(user);
+//        loginRepository.Search(user);
         JOptionPane.showMessageDialog(null,"Su usuario es correcto!!");
         }
         else{

@@ -5,6 +5,9 @@
  */
 package Mainf;
 
+import Product.ProductsJiFram;
+import Sell.SellJiFrame;
+
 /**
  *
  * @author Usuario
@@ -29,15 +32,13 @@ public class MainJfram extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenu3 = new javax.swing.JMenu();
-        jPanel1 = new javax.swing.JPanel();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu8 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
-        jMenu7 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        jmProducts = new javax.swing.JMenuItem();
+        jmEmployees = new javax.swing.JMenuItem();
+        jmSell = new javax.swing.JMenu();
+        jmiVenta = new javax.swing.JMenuItem();
 
         jMenu3.setText("jMenu3");
 
@@ -48,40 +49,48 @@ public class MainJfram extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 612, Short.MAX_VALUE)
+        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
+        jDesktopPane1.setLayout(jDesktopPane1Layout);
+        jDesktopPane1Layout.setHorizontalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 831, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 409, Short.MAX_VALUE)
+        jDesktopPane1Layout.setVerticalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 522, Short.MAX_VALUE)
         );
 
         jMenu1.setText("Catalogos");
 
-        jMenu4.setText("Productos");
+        jmProducts.setText("Productos");
+        jmProducts.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmProductsActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jmProducts);
 
-        jMenu8.setText("jMenu8");
-        jMenu4.add(jMenu8);
-
-        jMenu1.add(jMenu4);
-
-        jMenu5.setText("Empleados");
-        jMenu1.add(jMenu5);
-
-        jMenu6.setText("Clientes");
-        jMenu6.setToolTipText("");
-        jMenu1.add(jMenu6);
-
-        jMenu7.setText("Usuarios");
-        jMenu1.add(jMenu7);
+        jmEmployees.setText("Empleados");
+        jMenu1.add(jmEmployees);
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Venta");
-        jMenuBar1.add(jMenu2);
+        jmSell.setText("Venta");
+        jmSell.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmSellActionPerformed(evt);
+            }
+        });
+
+        jmiVenta.setText("Venta");
+        jmiVenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiVentaActionPerformed(evt);
+            }
+        });
+        jmSell.add(jmiVenta);
+
+        jMenuBar1.add(jmSell);
 
         setJMenuBar(jMenuBar1);
 
@@ -89,25 +98,35 @@ public class MainJfram extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
+            .addComponent(jDesktopPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 3, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        
+     
     }//GEN-LAST:event_formWindowOpened
+
+    private void jmProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmProductsActionPerformed
+        ProductsJiFram productsJiFram = new ProductsJiFram();
+        jDesktopPane1.add(productsJiFram);
+    }//GEN-LAST:event_jmProductsActionPerformed
+
+    private void jmSellActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmSellActionPerformed
+   
+    }//GEN-LAST:event_jmSellActionPerformed
+
+    private void jmiVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiVentaActionPerformed
+            SellJiFrame sellJiFram = new SellJiFrame();
+       jDesktopPane1.add(sellJiFram);
+    }//GEN-LAST:event_jmiVentaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,15 +179,13 @@ public class MainJfram extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
-    private javax.swing.JMenu jMenu7;
-    private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenuItem jmEmployees;
+    private javax.swing.JMenuItem jmProducts;
+    private javax.swing.JMenu jmSell;
+    private javax.swing.JMenuItem jmiVenta;
     // End of variables declaration//GEN-END:variables
 }
