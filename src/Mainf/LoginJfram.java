@@ -7,12 +7,14 @@
 package Mainf;
 
 import Entity.User;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Usuario
  */
 public class LoginJfram extends javax.swing.JFrame {
+    LoginController logincontroller = new LoginController();
 //LoginController loginController = new LoginController();
     /** Creates new form mainJfram */
     public LoginJfram() {
@@ -98,9 +100,7 @@ public class LoginJfram extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBtnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnEntrarActionPerformed
-             User us = new User();
-             us.getUserName();
-             us.getPassword();
+             buscaUser();
              
 //        loginController.SearchUser(us);
     }//GEN-LAST:event_jBtnEntrarActionPerformed
@@ -156,4 +156,17 @@ public class LoginJfram extends javax.swing.JFrame {
     private javax.swing.JTextField jtxtUser;
     // End of variables declaration//GEN-END:variables
 
+    private void buscaUser(){
+        try {
+            User user = new User();
+            JOptionPane.showMessageDialog(null,"entro");
+            user.getUserName().equals(jtxtUser.getText());
+        user.getPassword().equals(jtxtPass.getText());
+        logincontroller.SearchUser(user);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"error de conexion alv "+e);
+        }
+        
+    }
 }
+

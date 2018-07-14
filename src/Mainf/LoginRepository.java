@@ -8,9 +8,11 @@ package Mainf;
 import ConnectionDB.ConnectionSQLite;
 import Entity.User;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 /**
@@ -30,9 +32,9 @@ public class LoginRepository {
                 PreparedStatement pstmt = conn.prepareStatement(sqlQuery)){
                 resultado = pstmt.executeQuery();
                 
-            us = user.getUserName().toString();
+            us = resultado.getString("user");
         
-            JOptionPane.showMessageDialog(null, us+" usuario correcto");
+            JOptionPane.showMessageDialog(null, us+" es su user name!!");
             
             pstmt.executeUpdate();
         } catch (SQLException e) {

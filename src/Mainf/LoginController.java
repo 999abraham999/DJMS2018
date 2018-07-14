@@ -18,14 +18,14 @@ import javax.swing.JOptionPane;
 public class LoginController {
     LoginRepository loginRepository = new LoginRepository(); 
 
-    public LoginController(ProductRepository productRepository) {
+    public LoginController(LoginRepository loginRepository) {
         this.loginRepository = loginRepository;
     }
     public LoginController() {    }    
     
     public void SearchUser(User user){
-        String us = user.getUserName();
-        String pass = user.getPassword();
+        //String us = user.getUserName();
+        //String pass = user.getPassword();
         if(user!=null){
 //        loginRepository.Search(user);
         JOptionPane.showMessageDialog(null,"Su usuario es correcto!!");
