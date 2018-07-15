@@ -31,6 +31,7 @@ public class ProductController {
         product.setActiveProduct(true);
         product.setRegisterDateProduct(new Date());
         productRepository.Save(product);
+        JOptionPane.showMessageDialog(null, "Se Guardo producto exitosamente!!");
         } else{
             JOptionPane.showMessageDialog(null, "Error de validación");
         }

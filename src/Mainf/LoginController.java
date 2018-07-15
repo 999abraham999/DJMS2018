@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
 public class LoginController {
     LoginRepository loginRepository = new LoginRepository(); 
 
-    public LoginController(ProductRepository productRepository) {
+    public LoginController(LoginRepository loginRepository) {
         this.loginRepository = loginRepository;
     }
     public LoginController() {    }    
@@ -27,9 +27,14 @@ public class LoginController {
         String us = user.getUserName();
         String pass = user.getPassword();
         
+        if(us.isEmpty() || pass.isEmpty()){
         
-        
-        
+        JOptionPane.showMessageDialog(null, "user or password wrong!!");
+        }
+        else{
+            loginRepository.Search(user);
+        }
+            
         
         
         /*if(validation(user)){
