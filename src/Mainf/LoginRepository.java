@@ -25,6 +25,7 @@ public class LoginRepository {
     }
     
     public void Search(User user){
+        
     String sqlQuery = "select * from User where User.user like "+"'"+user.getUserName()+"';";
     ResultSet resultado =null;
     String us="";
