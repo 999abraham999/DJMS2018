@@ -28,15 +28,20 @@ public class LoginRepository {
     String sqlQuery = "select * from User where User.user like "+"'"+user.getUserName()+"';";
     ResultSet resultado =null;
     String us="";
+    String pass = "";
     try (Connection conn = ConnectionSQLite.ConnectDB();
                 PreparedStatement pstmt = conn.prepareStatement(sqlQuery)){
                 resultado = pstmt.executeQuery();
                 
             us = resultado.getString("user");
-        
-            JOptionPane.showMessageDialog(null, us+" es su user name!!");
-            
+            pass = resultado.getString("password");
+            if(user.getUserName().equals(us)&& user.getPassword().equals(pass)){
+            JOptionPane.showMessageDialog(null,"Bienvenido sr. "+us);} 
+            else{
+                JOptionPane.showMessageDialog(null,"User or password incorrectos");
+            }
             pstmt.executeUpdate();
+            
         } catch (SQLException e) {
              JOptionPane.showMessageDialog(null, "Error alv" + e);
         }

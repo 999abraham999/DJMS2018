@@ -7,6 +7,7 @@
 package Mainf;
 
 import Entity.User;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,6 +16,7 @@ import javax.swing.JOptionPane;
  */
 public class LoginJfram extends javax.swing.JFrame {
     LoginController logincontroller = new LoginController();
+    User us = new User();
 //LoginController loginController = new LoginController();
     /** Creates new form mainJfram */
     public LoginJfram() {
@@ -44,6 +46,15 @@ public class LoginJfram extends javax.swing.JFrame {
         jBtnEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnEntrarActionPerformed(evt);
+            }
+        });
+
+        jtxtPass.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jtxtPassKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jtxtPassKeyReleased(evt);
             }
         });
 
@@ -100,10 +111,34 @@ public class LoginJfram extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBtnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnEntrarActionPerformed
-             buscaUser();
+        MainJfram index = new MainJfram();
+        if(jtxtUser.getText().equals("")||jtxtPass.getText().equals("")){
+               JOptionPane.showMessageDialog(null,"Favor de llenar los campos!!","Error",0);
+            }
+            else
+                buscaUser();
+                if (true) {
+            index.show();
+                this.hide();
+        }else{
+                    
+                }
+                
              
 //        loginController.SearchUser(us);
     }//GEN-LAST:event_jBtnEntrarActionPerformed
+
+    private void jtxtPassKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtPassKeyReleased
+        
+    }//GEN-LAST:event_jtxtPassKeyReleased
+
+    private void jtxtPassKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtPassKeyPressed
+        int code = evt.getKeyCode(); 
+        char caracter = evt.getKeyChar(); 
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            buscaUser();
+        }
+    }//GEN-LAST:event_jtxtPassKeyPressed
 
     /**
      * @param args the command line arguments
@@ -159,9 +194,8 @@ public class LoginJfram extends javax.swing.JFrame {
     private void buscaUser(){
         try {
             User user = new User();
-            JOptionPane.showMessageDialog(null,"entro");
-            user.getUserName().equals(jtxtUser.getText());
-        user.getPassword().equals(jtxtPass.getText());
+            user.setUserName(jtxtUser.getText());
+            user.setPassword(jtxtPass.getText());
         logincontroller.SearchUser(user);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,"error de conexion alv "+e);
