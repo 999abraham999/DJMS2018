@@ -3,32 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Mainf;
+package Sell;
 
 import ConnectionDB.ConnectionSQLite;
-import Entity.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import javax.swing.JOptionPane;
 
 /**
  *
- * @author Danny
+ * @author ABRAHAM
  */
-public class LoginRepository {
+public class SellRepository {
     ConnectionSQLite connectionSQLite = new ConnectionSQLite();
-    public LoginRepository() {
+
+    public SellRepository() {
     }
-    
-    public void Search(User user){
-    String sqlQuery = "select * from User where User.user like "+"'"+user.getUserName()+"';";
+     public void Search(int code){
+    String sqlQueryPro = "SELECT codeProduct, nameProduct, priceUnitProduct FROM Product WHERE activeProduct = 1 AND codeProduct = 1"; 
+    String sqlQuery = "select * from User where User.user like "+"'"+code+"';";
     try (Connection conn = ConnectionSQLite.ConnectDB();
-                PreparedStatement pstmt = conn.prepareStatement(sqlQuery)){
+                PreparedStatement pstmt = conn.prepareStatement(sqlQueryPro)){
                  
             pstmt.executeUpdate();
         } catch (SQLException e) {
-             JOptionPane.showMessageDialog(null, "Error en la conexion" + e);
+         //    JOptionPane.showMessageDialog(null, "Error en la conexion" + e);
         }
     }
 }
