@@ -13,14 +13,18 @@ public class User {
     int Id;
     String userName;
     String password;
+    String type;
+    int active;
 
     public User() {
     }
 
-    public User(int Id, String userName, String password) {
+    public User(int Id, String userName, String password, String type, int active) {
         this.Id = Id;
         this.userName = userName;
         this.password = password;
+        this.type = type;
+        this.active = active;
     }
 
     public int getId() {
@@ -47,10 +51,29 @@ public class User {
         this.password = password;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public int getActive() {
+        return active;
+    }
+
+    public void setActive(int active) {
+        this.active = active;
+    }
+
     @Override
     public String toString() {
-        return "User{" + "Id=" + Id + ", userName=" + userName + ", password=" + password + '}';
+        return "User{" + "Id=" + Id + ", userName=" + userName + ", password=" + password + ", type=" + type + ", active=" + active + '}';
     }
+    
+
+    
     
     
     

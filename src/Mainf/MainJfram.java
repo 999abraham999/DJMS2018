@@ -34,6 +34,11 @@ public class MainJfram extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu2 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jmProducts = new javax.swing.JMenuItem();
         jmEmployees = new javax.swing.JMenuItem();
@@ -57,8 +62,24 @@ public class MainJfram extends javax.swing.JFrame {
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 468, Short.MAX_VALUE)
+            .addGap(0, 491, Short.MAX_VALUE)
         );
+
+        jMenu2.setText("Archivo");
+
+        jMenu4.setText("Reporte");
+        jMenu2.add(jMenu4);
+
+        jMenu5.setText("Exportar venta");
+        jMenu2.add(jMenu5);
+
+        jMenuItem3.setText("Cerrar Sesion");
+        jMenu2.add(jMenuItem3);
+
+        jMenuItem2.setText("Ayuda  (F1)");
+        jMenu2.add(jMenuItem2);
+
+        jMenuBar1.add(jMenu2);
 
         jMenu1.setText("Catalogos");
 
@@ -102,9 +123,7 @@ public class MainJfram extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 23, Short.MAX_VALUE))
+            .addComponent(jDesktopPane1)
         );
 
         pack();
@@ -181,8 +200,13 @@ public class MainJfram extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jmEmployees;
     private javax.swing.JMenuItem jmProducts;
     private javax.swing.JMenu jmSell;

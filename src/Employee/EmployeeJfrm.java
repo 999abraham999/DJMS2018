@@ -7,6 +7,8 @@ package Employee;
 
 import static ConnectionDB.ConnectionSQLite.ConnectDB;
 import Entity.Employee;
+import Entity.User;
+import User.UserController;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
@@ -15,7 +17,7 @@ import javax.swing.JOptionPane;
  * @author ABRAHAM
  */
 public class EmployeeJfrm extends javax.swing.JFrame {
-
+UserController usController = new UserController();
     /**
      * Creates new form mainJfrm
      */
@@ -208,7 +210,7 @@ public class EmployeeJfrm extends javax.swing.JFrame {
     }//GEN-LAST:event_jtxtLastNameActionPerformed
 
     private void jbtnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSaveActionPerformed
-        Boolean verifyJtext;
+        /*Boolean verifyJtext;
         verifyJtext = validationJtext();
         Employee employee;
         Date fecha;
@@ -222,7 +224,16 @@ public class EmployeeJfrm extends javax.swing.JFrame {
             employee.getPerson().setAge(fecha);
             employee.getPerson().setAddress(jtxtAddress.getText());
             employee.getPerson().setRegisterDate(fecha);
-        }
+        }*/
+        String result = JOptionPane.showInputDialog(this,"Que tipo de Usuario es el empleado (Normal) o (Administrador)");
+        User us = new User();
+        String name = jtxtName.getText()+userCreated();
+        us.setId(2);
+        us.setUserName(name);
+        us.setPassword(passCreated());
+        us.setType(result);
+        us.setActive(1);
+        usController.SaveUser(us);
     }//GEN-LAST:event_jbtnSaveActionPerformed
 
     private void jbtnConnectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnConnectionActionPerformed
@@ -308,5 +319,34 @@ public class EmployeeJfrm extends javax.swing.JFrame {
             valid = false;
         }
         return valid;
+    }
+    
+    private String userCreated(){
+        char[] elementos ={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
+        '0','1','2','3','4','5','6','7','8','9'};
+        char[] conjunto = new char[3];
+        String us="";
+        String pass = "";
+        for(int i=0;i<3;i++){
+        int el = (int)(Math.random()*36); 
+        conjunto[i]=new Character(elementos[el]);
+        }
+        
+        return pass = new String(conjunto);
+    }
+    private String passCreated(){
+        
+        char[] elementos ={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
+        '0','1','2','3','4','5','6','7','8','9'};
+        char[] conjunto = new char[8];
+        String us="";
+        String pass = "";
+        for(int i=0;i<8;i++){
+        int el = (int)(Math.random()*36); 
+        conjunto[i]=new Character(elementos[el]);
+        }
+        
+        return pass = new String(conjunto);
+        
     }
 }
