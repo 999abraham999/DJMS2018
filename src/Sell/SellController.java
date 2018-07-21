@@ -10,5 +10,18 @@ package Sell;
  * @author ABRAHAM
  */
 public class SellController {
+    SellRepository sellRepository = new SellRepository();
+
+    public SellController() {
+    }
+
+    public SellController(SellRepository sellRepository) {
+        this.sellRepository = sellRepository;
+    }
+    
+    
+    public  void SearchCodeProduct(String code) {
+        sellRepository.SearchProduct(code);
+    }
     
 }

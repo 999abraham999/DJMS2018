@@ -21,11 +21,9 @@ import javax.swing.JOptionPane;
 public class ProductController {
     ProductRepository productRepository = new ProductRepository(); 
 
-    public ProductController(ProductRepository productRepository) {
-        this.productRepository = productRepository;
+    public ProductController() {
     }
-    public ProductController() {    }    
-    
+
     public void SaveProduct(Product product){
         if(validation(product)){
         product.setActiveProduct(true);
