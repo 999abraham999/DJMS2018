@@ -6,9 +6,13 @@
 package Sell;
 
 import ConnectionDB.ConnectionSQLite;
+import Entity.Product;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import org.omg.CORBA.Any;
 
 /**
  *
@@ -19,13 +23,17 @@ public class SellRepository {
 
     public SellRepository() {
     }
-     public void Search(int code){
-    String sqlQueryPro = "SELECT codeProduct, nameProduct, priceUnitProduct FROM Product WHERE activeProduct = 1 AND codeProduct = 1"; 
-    String sqlQuery = "select * from User where User.user like "+"'"+code+"';";
-    try (Connection conn = ConnectionSQLite.ConnectDB();
-                PreparedStatement pstmt = conn.prepareStatement(sqlQueryPro)){
-                 
-            pstmt.executeUpdate();
+    
+     public void SearchProduct(String code){
+    String sqlQuery = "SELECT codeProduct, nameProduct, priceUnitProduct FROM Product WHERE activeProduct = 1 AND codeProduct = 1"; 
+    ResultSet resultado = null;
+    Product product;
+      
+    try (Connection conn = ConnectionSQLite.ConnectDB();    
+            Statement stmt  = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sqlQuery)){
+       // product = new Product(0, Long.MIN_VALUE, code, Boolean.TRUE, Double.MIN_NORMAL, registerDateProduct);
+        
         } catch (SQLException e) {
          //    JOptionPane.showMessageDialog(null, "Error en la conexion" + e);
         }

@@ -5,14 +5,15 @@
  */
 package Sell;
 
+import java.awt.event.KeyEvent;
 import javax.swing.JTable;
-
+import Sell.SellController;
 /**
  *
  * @author ABRAHAM
  */
 public class SellJiFrame extends javax.swing.JInternalFrame {
-
+    SellController sellController = new Sell.SellController();
     /**
      * Creates new form SellJiFrame
      */
@@ -284,7 +285,11 @@ public class SellJiFrame extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtxtCodeProductKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtCodeProductKeyPressed
-        // TODO add your handling code here:
+        int code = evt.getKeyCode(); 
+        char caracter = evt.getKeyChar(); 
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+         sellController.SearchCodeProduct(jtxtCodeProduct.getText());
+        }
     }//GEN-LAST:event_jtxtCodeProductKeyPressed
 
 
