@@ -232,7 +232,7 @@ UserController usController = new UserController();
         us.setUserName(name);
         us.setPassword(passCreated());
         us.setType(result);
-        us.setActive(1);
+        us.setActive(true);
         usController.SaveUser(us);
     }//GEN-LAST:event_jbtnSaveActionPerformed
 

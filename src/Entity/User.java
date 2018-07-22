@@ -14,12 +14,12 @@ public class User {
     String userName;
     String password;
     String type;
-    int active;
+    Boolean active;
 
     public User() {
     }
 
-    public User(int Id, String userName, String password, String type, int active) {
+    public User(int Id, String userName, String password, String type, Boolean active) {
         this.Id = Id;
         this.userName = userName;
         this.password = password;
@@ -59,11 +59,11 @@ public class User {
         this.type = type;
     }
 
-    public int getActive() {
+    public Boolean getActive() {
         return active;
     }
 
-    public void setActive(int active) {
+    public void setActive(Boolean active) {
         this.active = active;
     }
 
@@ -71,7 +71,8 @@ public class User {
     public String toString() {
         return "User{" + "Id=" + Id + ", userName=" + userName + ", password=" + password + ", type=" + type + ", active=" + active + '}';
     }
-    
+
+
 
     
     

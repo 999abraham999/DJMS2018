@@ -19,23 +19,23 @@ import javax.swing.JOptionPane;
  */
 public class UserRepository {
     public void UserGuarda(User user){
-        String sqlQuery = "Insert into User values ('user','password','type','active');";
+        String sqlQuery = "Insert into User(user, password, type, active) values(?,?,?,?)";
        // String sqlQuery = "Insert into User values ('"+user.getUserName()+"','"+user.getPassword()+"''"+user.getType()+"','"+user.getActive()+"',);";
-        try (Connection conn = ConnectionSQLite.ConnectDB();
-                PreparedStatement pstmt = conn.prepareStatement(sqlQuery)){
+        try ( final Connection conn = ConnectionSQLite.ConnectDB();
+                final PreparedStatement pstmt = conn.prepareStatement(sqlQuery)){
             
-            pstmt.setInt(0, 2);
+       //     pstmt.setInt(0, 2);
             pstmt.setString(1, user.getUserName());
             pstmt.setString(2, user.getPassword());
             pstmt.setString(3, user.getType());
-            pstmt.setInt(4, user.getActive());
+            pstmt.setBoolean(4, user.getActive());
+            pstmt.executeUpdate();
             JOptionPane.showConfirmDialog(null, "asta aqui va bien!!");
             
            // pstmt.executeQuery();
-            pstmt.executeUpdate();
             
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error alv" + e);
+            JOptionPane.showMessageDialog(null, "Error alv " + e);
         }
     }
     private void Search(User user){
