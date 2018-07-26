@@ -39,6 +39,7 @@ public class ProductController {
             JOptionPane.showMessageDialog(null, "Error de validación");
         }
         
+        
     }
 
     private Boolean validation(Product pro) {
