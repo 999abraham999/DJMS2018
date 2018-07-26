@@ -21,7 +21,7 @@ public class ConnectionSQLite {
         String urlDany = "jdbc:sqlite:C://database sqlite/DJMI_DB.sqlite";
          Connection conn = null;
         try {
-            conn = DriverManager.getConnection(urlDany);
+            conn = DriverManager.getConnection(urlAbraham);
             System.out.println("Connected to Database");
           } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error en la puta qe te pario: " + e);

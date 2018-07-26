@@ -13,7 +13,7 @@ import java.util.Date;
  */
 public class Product {
     Long Id;
-    Long codeProduct;
+    String codeProduct;
     String nameProduct;
     Boolean activeProduct;
     Double priceUnitProcut;
@@ -22,7 +22,7 @@ public class Product {
     public Product() {
     }
 
-    public Product(Long Id, Long codeProduct, String nameProduct, Boolean activeProduct, Double priceUnitProcut, Date registerDateProduct) {
+    public Product(Long Id, String codeProduct, String nameProduct, Boolean activeProduct, Double priceUnitProcut, Date registerDateProduct) {
         this.Id = Id;
         this.codeProduct = codeProduct;
         this.nameProduct = nameProduct;
@@ -39,11 +39,11 @@ public class Product {
         this.Id = Id;
     }
 
-    public Long getCodeProduct() {
+    public String getCodeProduct() {
         return codeProduct;
     }
 
-    public void setCodeProduct(Long codeProduct) {
+    public void setCodeProduct(String codeProduct) {
         this.codeProduct = codeProduct;
     }
 

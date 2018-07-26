@@ -5,6 +5,8 @@
  */
 package dejamisu_2018;
 
+import Mainf.MainJfram;
+
 /**
  *
  * @author Usuario
@@ -16,6 +18,8 @@ public class DeJaMiSu_2018 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        MainJfram main = new MainJfram();
+        main.setVisible(true);
     }
     
 }

@@ -40,8 +40,6 @@ public class ProductsJiFram extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setIconifiable(true);
-        setMaximizable(true);
-        setResizable(true);
         setTitle("Productos");
         setVisible(true);
 
@@ -132,7 +130,7 @@ public class ProductsJiFram extends javax.swing.JInternalFrame {
       Product product = new Product();
      
         product.setNameProduct(jtxtName.getText());
-        product.setCodeProduct(Long.parseLong(jtxtCode.getText()));
+        product.setCodeProduct(jtxtCode.getText());
         product.setPriceUnitProcut(Double.parseDouble(jtxtPriceUnit.getText()));
         
         productController.SaveProduct(product);  

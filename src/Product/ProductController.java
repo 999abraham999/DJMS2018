@@ -12,6 +12,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Date;
+import java.util.List;
 import javax.swing.JOptionPane;
  
 /**
@@ -20,10 +21,14 @@ import javax.swing.JOptionPane;
  */
 public class ProductController {
     ProductRepository productRepository = new ProductRepository(); 
-
+    Product product;
     public ProductController() {
     }
 
+    public List<Product> finAllProduct(String active, String name){
+        return productRepository.findAllProduct(active, name);
+    }
+    
     public void SaveProduct(Product product){
         if(validation(product)){
         product.setActiveProduct(true);
@@ -37,9 +42,6 @@ public class ProductController {
     }
 
     private Boolean validation(Product pro) {
-        if (pro.getCodeProduct().SIZE > 9 && pro.getPriceUnitProcut() > 0) {
-            return true;
-        } else
-            return false;
-    }    
+    return true;
+    }
 }
