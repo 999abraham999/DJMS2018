@@ -17,11 +17,12 @@ public class ConnectionSQLite {
     }
     
     public static Connection ConnectDB(){
+        String urlAbrahamDesktop = "jdbc:sqlite:D://proyectos/GitHub/Database/DJMI_DB.sqlite";
         String urlAbraham = "jdbc:sqlite:F://gitHub/db_DJMS/DJMI_DB.sqlite";
         String urlDany = "jdbc:sqlite:C://database sqlite/DJMI_DB.sqlite";
          Connection conn = null;
         try {
-            conn = DriverManager.getConnection(urlAbraham);
+            conn = DriverManager.getConnection(urlAbrahamDesktop);
             System.out.println("Connected to Database");
           } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error en la puta qe te pario: " + e);

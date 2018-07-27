@@ -24,17 +24,16 @@ public class ProductsManagementJifrm extends javax.swing.JInternalFrame {
         int cont = 0;
         String active = "1";
         String name = "";
-    /**
+        boolean van = false;
+        /**
      * Creates new form ProductManagementJifrm
      */
     public ProductsManagementJifrm() {
         initComponents();
         try {
-        } catch (Exception e) {
-
-        }
         findProducts();
-        
+        } catch (Exception e) {
+        }
     }
 
     /**
@@ -46,6 +45,7 @@ public class ProductsManagementJifrm extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jComboBox1 = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtableProducts = new javax.swing.JTable();
         jtxtNameProducto = new javax.swing.JTextField();
@@ -60,6 +60,8 @@ public class ProductsManagementJifrm extends javax.swing.JInternalFrame {
         jButton4 = new javax.swing.JButton();
         cbActive = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         setClosable(true);
         setIconifiable(true);
@@ -192,9 +194,9 @@ public class ProductsManagementJifrm extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         name = jtxtNameProducto.getText();
-        if (cbActive.getActionCommand() == "Activo") {
+        if (cbActive.getSelectedItem().toString() == "Activo") {
             active = "1";
-        }else if (cbActive.getActionCommand() == "Inactivo") {
+        }else if (cbActive.getSelectedItem().toString() == "Inactivo") {
             active = "0";
         }
         findProducts();
@@ -213,6 +215,7 @@ public class ProductsManagementJifrm extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -225,19 +228,28 @@ public class ProductsManagementJifrm extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 
     private void findProducts() {
-        
+        if (van) {
+        ClearTable();
+        }
         List<Product> listPro = null;
         listPro = productController.finAllProduct(active, name);
         String[] columsName = new String[]{ "Codigo Producto","Nombre","Precio del producto","Fecha de registro"};
         DefaultTableModel model = (DefaultTableModel) jtableProducts.getModel();
         model.setColumnIdentifiers(columsName);
-     
+        van = true;
         try {
             for (Product product : listPro) {
                 model.addRow(new Object[]{ product.getCodeProduct(), product.getNameProduct(), product.getPriceUnitProcut(), product.getRegisterDateProduct()});
             }
         } catch (Exception e) {
         }
-        
+    }
+
+    private void ClearTable() {
+        DefaultTableModel dm = (DefaultTableModel) jtableProducts.getModel();
+        int rowCount = dm.getRowCount();
+        for (int i = rowCount - 1; i >= 0; i--) {
+            dm.removeRow(i);
+        }
     }
 }
