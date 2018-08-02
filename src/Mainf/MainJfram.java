@@ -5,6 +5,7 @@
  */
 package Mainf;
 
+import Custumer.*;
 import Product.ProductsManagementJifrm;
 import Product.ProductsJiFram;
 import Sell.SellJiFrame;
@@ -40,6 +41,9 @@ public class MainJfram extends javax.swing.JFrame {
         jmmProcuts = new javax.swing.JMenu();
         jmiProduct = new javax.swing.JMenuItem();
         jmProductManagement = new javax.swing.JMenuItem();
+        jmmCustumer = new javax.swing.JMenu();
+        jmiCustumerComponent = new javax.swing.JMenuItem();
+        jmiCustumerManagement = new javax.swing.JMenuItem();
         jmSell = new javax.swing.JMenu();
         jmiVenta = new javax.swing.JMenuItem();
 
@@ -93,6 +97,26 @@ public class MainJfram extends javax.swing.JFrame {
         jmmProcuts.add(jmProductManagement);
 
         jMenu1.add(jmmProcuts);
+
+        jmmCustumer.setText("Clientes");
+
+        jmiCustumerComponent.setText("Registro de Clientes");
+        jmiCustumerComponent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiCustumerComponentActionPerformed(evt);
+            }
+        });
+        jmmCustumer.add(jmiCustumerComponent);
+
+        jmiCustumerManagement.setText("Administrar Clientes");
+        jmiCustumerManagement.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiCustumerManagementActionPerformed(evt);
+            }
+        });
+        jmmCustumer.add(jmiCustumerManagement);
+
+        jMenu1.add(jmmCustumer);
 
         jMenuBar1.add(jMenu1);
 
@@ -158,6 +182,16 @@ public class MainJfram extends javax.swing.JFrame {
         jDesktopPane1.add(productsJiFram);
     }//GEN-LAST:event_jmiProductActionPerformed
 
+    private void jmiCustumerComponentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiCustumerComponentActionPerformed
+            CustumerComponentJifrm cc = new CustumerComponentJifrm();
+            jDesktopPane1.add(cc);
+    }//GEN-LAST:event_jmiCustumerComponentActionPerformed
+
+    private void jmiCustumerManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiCustumerManagementActionPerformed
+            CustumerManagementJifrm cm = new CustumerManagementJifrm();
+            jDesktopPane1.add(cm);
+    }//GEN-LAST:event_jmiCustumerManagementActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -216,8 +250,11 @@ public class MainJfram extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmEmployees;
     private javax.swing.JMenuItem jmProductManagement;
     private javax.swing.JMenu jmSell;
+    private javax.swing.JMenuItem jmiCustumerComponent;
+    private javax.swing.JMenuItem jmiCustumerManagement;
     private javax.swing.JMenuItem jmiProduct;
     private javax.swing.JMenuItem jmiVenta;
+    private javax.swing.JMenu jmmCustumer;
     private javax.swing.JMenu jmmProcuts;
     // End of variables declaration//GEN-END:variables
 }
