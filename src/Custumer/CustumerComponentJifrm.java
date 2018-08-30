@@ -5,12 +5,15 @@
  */
 package Custumer;
 
+import Entity.Custumer;
+import Entity.Person;
+
 /**
  *
  * @author Usuario
  */
 public class CustumerComponentJifrm extends javax.swing.JInternalFrame {
-
+    CustumerController custumerController = new CustumerController();
     /**
      * Creates new form CustumerJifrm
      */
@@ -141,7 +144,19 @@ public class CustumerComponentJifrm extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        // TODO add your handling code here:
+        try {
+            Person person = new Person();
+              Custumer custumer = new Custumer();
+              custumer.setEmailAddress(jtxtEmail.getText());
+              custumer.setPerson(person);
+              custumer.getPerson().setName(jtxtName.getText());
+              custumer.getPerson().setLastName(jtxtLastName.getText());
+              custumer.getPerson().setAddress(jtxtAddress.getText());
+              //custumer.getPerson().setAge(jtxtAge.getText());
+        
+        custumerController.saveCustumer(custumer);
+        } catch (Exception e) {
+        } 
     }//GEN-LAST:event_btnSaveActionPerformed
 
 

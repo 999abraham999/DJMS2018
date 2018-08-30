@@ -5,10 +5,23 @@
  */
 package Custumer;
 
+import Entity.Custumer;
+
 /**
  *
  * @author Usuario
  */
 public class CustumerController {
+    CustumerRepository custumerRepository = new CustumerRepository();
     
+    public CustumerController() {
+    }
+    
+    public void findAll(){
+
+    }
+    
+    public void saveCustumer(Custumer custumer){
+        custumerRepository.Save(custumer);
+    }
 }
